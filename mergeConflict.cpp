@@ -3,9 +3,17 @@
 // 2/6/2018
 // An example of a merge conflict resolution using Git.
 
-#include <iostream>
+#include <unistd.h>
+#include <sys/types.h>
 
 int main () {
-  std::cout << "Pre-Merge Output!" << std::endl;
+   // spawn a new process
+   pid_t proc = fork();
+  
+			if (!proc) {
+				write(1, "Edit from Github!\n", 18);
+			} else if (proc < 0) {
+				_exit(1);
+			}
   return 0;
 }
