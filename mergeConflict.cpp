@@ -12,7 +12,7 @@ int main () {
 
       // Only perform the write in the child process (when fork returns 0)
 			if (!proc) {
-				write(1, "Merge Conflict!!!\n", 17);
+				write(1, "Merge Conflict!!\n", 16);
 			} else if (proc < 0) {
 				// Error occured creating new process, an error code was returned
 				_exit(1);
